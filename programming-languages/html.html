@@ -1,0 +1,204 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="html-cheatsheet">HTML Cheatsheet</h1>
+<h2 id="unique-features">Unique Features</h2>
+<ul>
+<li>Hypertext markup language used to create web pages</li>
+<li>Uses tags to define the structure and content of a web page</li>
+<li>Can include links, images, videos, audio, and other media types</li>
+<li>Supports forms for user input and interaction</li>
+</ul>
+<h2 id="basic-structure">Basic Structure</h2>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Page Title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Heading 1<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Paragraph<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h2 id="tags">Tags</h2>
+<ul>
+<li><code>&lt;html&gt;</code>: Defines an HTML document</li>
+<li><code>&lt;head&gt;</code>: Contains metadata for the document</li>
+<li><code>&lt;title&gt;</code>: Defines a title for the document</li>
+<li><code>&lt;body&gt;</code>: Contains the visible page content</li>
+<li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>: Defines headings of different sizes</li>
+<li><code>&lt;p&gt;</code>: Defines a paragraph</li>
+<li><code>&lt;a&gt;</code>: Defines a hyperlink</li>
+<li><code>&lt;img&gt;</code>: Defines an image</li>
+<li><code>&lt;ul&gt;</code>: Defines an unordered list</li>
+<li><code>&lt;ol&gt;</code>: Defines an ordered list</li>
+<li><code>&lt;li&gt;</code>: Defines a list item</li>
+<li><code>&lt;form&gt;</code>: Defines a form for user input</li>
+<li><code>&lt;input&gt;</code>: Defines an input field</li>
+<li><code>&lt;button&gt;</code>: Defines a clickable button</li>
+<li><code>&lt;label&gt;</code>: Defines a label for an input element</li>
+<li><code>&lt;select&gt;</code>: Defines a drop-down list</li>
+<li><code>&lt;option&gt;</code>: Defines an option in a drop-down list</li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<ul>
+<li><code>id</code>: Defines a unique identifier for an element</li>
+<li><code>class</code>: Defines one or more classes for an element</li>
+<li><code>style</code>: Defines inline CSS styles for an element</li>
+<li><code>src</code>: Defines the URL of an image or other media element</li>
+<li><code>href</code>: Defines the URL of a hyperlink</li>
+<li><code>alt</code>: Defines alternative text for an image</li>
+<li><code>type</code>: Defines the type of an input element</li>
+<li><code>name</code>: Defines a name for an input element</li>
+<li><code>value</code>: Defines a value for an input element</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN Web Docs</a></li>
+<li><a href="https://www.w3schools.com/html/">W3Schools</a></li>
+</ul>
+
+	
+
+</body></html>

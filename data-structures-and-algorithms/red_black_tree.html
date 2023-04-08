@@ -1,0 +1,202 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="red-black-tree-cheatsheet">Red-Black Tree Cheatsheet</h1>
+<h2 id="overview">Overview</h2>
+<ul>
+<li>Red-Black Tree is a self-balancing binary search tree.</li>
+<li>It provides worst-case O(log n) time complexity for search, insert, and delete operations.</li>
+<li>Each node is either red or black.</li>
+<li>The root node is always black.</li>
+<li>If a node is red, its children must be black.</li>
+<li>Every path from a given node to any of its descendant leaf nodes contains the same number of black nodes.</li>
+</ul>
+<h2 id="operations">Operations</h2>
+<h3 id="insertion">Insertion</h3>
+<pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">insert_node</span>(<span class="hljs-params">root, key</span>):
+    <span class="hljs-comment"># Create a new node</span>
+    new_node = Node(key)
+    <span class="hljs-comment"># Insert the new node as a normal BST</span>
+    root = bst_insert(root, new_node)
+
+    <span class="hljs-comment"># Fix the Red-Black Tree properties</span>
+    fix_violation(root, new_node)
+
+    <span class="hljs-comment"># Return the root of the modified tree</span>
+    <span class="hljs-keyword">return</span> root
+</code></pre>
+<h3 id="deletion">Deletion</h3>
+<pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">delete_node</span>(<span class="hljs-params">root, key</span>):
+    <span class="hljs-comment"># Find the node to delete</span>
+    node = bst_delete(root, key)
+
+    <span class="hljs-comment"># Fix the Red-Black Tree properties</span>
+    fix_violation(root, node.parent)
+
+    <span class="hljs-comment"># Return the root of the modified tree</span>
+    <span class="hljs-keyword">return</span> root
+</code></pre>
+<h3 id="traversal">Traversal</h3>
+<h4 id="in-order-traversal">In-order Traversal</h4>
+<pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">in_order_traversal</span>(<span class="hljs-params">node</span>):
+    <span class="hljs-keyword">if</span> node:
+        in_order_traversal(node.left)
+        <span class="hljs-built_in">print</span>(node.key)
+        in_order_traversal(node.right)
+</code></pre>
+<h2 id="time-complexity">Time Complexity</h2>
+<ul>
+<li>Insertion: O(log n)</li>
+<li>Deletion: O(log n)</li>
+<li>Traversal: O(n)</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Red%E2%80%93black_tree">Red-Black Tree Wikipedia</a></li>
+<li><a href="https://www.geeksforgeeks.org/red-black-tree-set-1-introduction-2/">GeeksforGeeks: Red-Black Tree</a></li>
+<li><a href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">Red-Black Tree Visualization</a></li>
+</ul>
+
+	
+
+</body></html>

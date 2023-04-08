@@ -1,0 +1,200 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="objective-c-cheatsheet">Objective-C Cheatsheet</h1>
+<p>Objective-C is a programming language used primarily for developing applications for Apple's Mac OS X and iOS operating systems. Here is an overview of its features, code blocks, and resources.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Objective-C is an object-oriented programming language.</li>
+<li>It is a superset of the C programming language, meaning that it includes all of the features of C as well as additional features for object-oriented programming.</li>
+<li>Objective-C uses a dynamic runtime system, which allows for features such as late binding and dynamic method resolution.</li>
+<li>Objective-C is the primary programming language used for developing applications for Apple's Mac OS X and iOS operating systems.</li>
+</ul>
+<h2 id="code-blocks">Code Blocks</h2>
+<h3 id="variables">Variables</h3>
+<p>Variables are used to store data that can be used later in the program.</p>
+<pre><code class="hljs objective-c">int variableName = value;
+</code></pre>
+<h3 id="methods">Methods</h3>
+<p>Methods are code blocks that perform a specific task. They can be called by other parts of the program.</p>
+<pre><code class="hljs objective-c">-  (void)methodName:(parameterType)parameterName {
+    // code to be executed
+}
+</code></pre>
+<h3 id="conditionals">Conditionals</h3>
+<p>Conditionals allow the program to make decisions based on certain conditions.</p>
+<pre><code class="hljs objective-c">if (condition) {
+    // code to be executed if condition is true
+} else if (otherCondition) {
+    // code to be executed if otherCondition is true
+} else {
+    // code to be executed if neither condition is true
+}
+</code></pre>
+<h3 id="loops">Loops</h3>
+<p>Loops allow the program to repeat a set of instructions.</p>
+<pre><code class="hljs objective-c">for (int i = 0; i &lt; 10; i++) {
+    // code to be executed
+}
+</code></pre>
+<h3 id="objects">Objects</h3>
+<p>Objective-C is an object-oriented programming language, and objects are a fundamental part of the language.</p>
+<pre><code class="hljs objective-c">@interface ClassName : SuperclassName
+// properties and methods
+@end
+
+@implementation ClassName
+// implementation of methods
+@end
+</code></pre>
+<h2 id="resources">Resources</h2>
+<p>Here are some resources for learning and using Objective-C:</p>
+<ul>
+<li><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html">Objective-C Programming Language</a></li>
+<li><a href="https://www.reddit.com/r/ObjectiveC/">Objective-C subreddit</a></li>
+<li><a href="https://stackoverflow.com/questions/tagged/objective-c">Objective-C on Stack Overflow</a></li>
+</ul>
+
+	
+
+</body></html>

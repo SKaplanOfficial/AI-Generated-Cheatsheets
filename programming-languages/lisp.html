@@ -1,0 +1,224 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="lisp-cheatsheet">Lisp Cheatsheet</h1>
+<p>Lisp is a family of programming languages that are based on the lambda calculus and characterized by their use of parentheses for code blocks. Lisp is a powerful language with a simple syntax, making it a popular choice for artificial intelligence, data processing, and web development.</p>
+<h2 id="unique-features">Unique Features</h2>
+<ul>
+<li>Code as data</li>
+<li>Macros</li>
+<li>Dynamic typing</li>
+<li>Recursion</li>
+<li>Functional programming</li>
+<li>Interactive development</li>
+</ul>
+<h2 id="variables">Variables</h2>
+<p>Variables in Lisp are declared using the <code>defvar</code> or <code>setq</code> function. Lisp supports dynamic typing, so you don't need to specify the type of the variable.</p>
+<pre><code class="hljs lisp">(<span class="hljs-name">defvar</span> name <span class="hljs-string">"John"</span>)
+(<span class="hljs-name">setq</span> age <span class="hljs-number">30</span>)
+(<span class="hljs-name">setq</span> pi <span class="hljs-number">3.14</span>)
+</code></pre>
+<h2 id="functions">Functions</h2>
+<p>Functions in Lisp are declared using the <code>defun</code> function followed by the function name and parameters. Lisp supports lambda expressions, which are anonymous functions that can be assigned to variables and passed as arguments to other functions.</p>
+<pre><code class="hljs lisp">(<span class="hljs-name">defun</span> greet (<span class="hljs-name">name</span>)
+  (<span class="hljs-name">format</span> <span class="hljs-literal">t</span> <span class="hljs-string">"Hello, ~a!"</span> name))
+
+(<span class="hljs-name">greet</span> <span class="hljs-string">"John"</span>)
+
+(<span class="hljs-name">setq</span> add (<span class="hljs-name">lambda</span> (<span class="hljs-name">a</span> b)
+  (<span class="hljs-name">+</span> a b)))
+
+(<span class="hljs-name">print</span> (<span class="hljs-name">funcall</span> add <span class="hljs-number">2</span> <span class="hljs-number">3</span>))
+</code></pre>
+<h2 id="loops">Loops</h2>
+<p>Lisp supports <code>do</code>, <code>dotimes</code>, and <code>dolist</code> loops, as well as recursion.</p>
+<pre><code class="hljs lisp">(<span class="hljs-name">setq</span> numbers '(<span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span>))
+
+(<span class="hljs-name">dolist</span> (<span class="hljs-name">number</span> numbers)
+  (<span class="hljs-name">print</span> number))
+
+(<span class="hljs-name">dotimes</span> (<span class="hljs-name">i</span> <span class="hljs-number">5</span>)
+  (<span class="hljs-name">print</span> i))
+
+(<span class="hljs-name">defun</span> countdown (<span class="hljs-name">n</span>)
+  (<span class="hljs-name">when</span> (<span class="hljs-name">&gt;</span> n <span class="hljs-number">0</span>)
+    (<span class="hljs-name">print</span> n)
+    (<span class="hljs-name">countdown</span> (<span class="hljs-name">-</span> n <span class="hljs-number">1</span>))))
+
+(<span class="hljs-name">countdown</span> <span class="hljs-number">5</span>)
+</code></pre>
+<h2 id="conditionals">Conditionals</h2>
+<p>Lisp supports <code>if</code>, <code>when</code>, and <code>unless</code> statements, as well as the <code>cond</code> control structure.</p>
+<pre><code class="hljs lisp">(<span class="hljs-name">setq</span> age <span class="hljs-number">30</span>)
+
+(<span class="hljs-name">if</span> (<span class="hljs-name">&lt;</span> age <span class="hljs-number">18</span>)
+  (<span class="hljs-name">print</span> <span class="hljs-string">"You are too young to vote."</span>)
+  (<span class="hljs-name">if</span> (<span class="hljs-name">&lt;</span> age <span class="hljs-number">21</span>)
+    (<span class="hljs-name">print</span> <span class="hljs-string">"You can vote, but not drink."</span>)
+    (<span class="hljs-name">print</span> <span class="hljs-string">"You can vote and drink."</span>)))
+
+(<span class="hljs-name">setq</span> result (<span class="hljs-name">if</span> (<span class="hljs-name">&gt;=</span> age <span class="hljs-number">18</span>) <span class="hljs-string">"You are an adult"</span> <span class="hljs-string">"You are not an adult"</span>))
+(<span class="hljs-name">print</span> result)
+</code></pre>
+<h2 id="file-manipulation">File Manipulation</h2>
+<p>Lisp provides several ways to read and write files. You can use the <code>with-open-file</code> macro to create, read, write, and delete files.</p>
+<pre><code class="hljs lisp">(<span class="hljs-name">with-open-file</span> (<span class="hljs-name">file</span> <span class="hljs-string">"example.txt"</span> <span class="hljs-symbol">:direction</span> <span class="hljs-symbol">:output</span>)
+  (<span class="hljs-name">write-line</span> <span class="hljs-string">"Hello, world!"</span> file))
+
+(<span class="hljs-name">with-open-file</span> (<span class="hljs-name">file</span> <span class="hljs-string">"example.txt"</span> <span class="hljs-symbol">:direction</span> <span class="hljs-symbol">:input</span>)
+  (<span class="hljs-name">let</span> ((<span class="hljs-name">content</span> (<span class="hljs-name">read-line</span> file)))
+    (<span class="hljs-name">print</span> content)))
+
+(<span class="hljs-name">delete-file</span> <span class="hljs-string">"example.txt"</span>)
+</code></pre>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="http://www.lispworks.com/documentation/HyperSpec/Front/index.htm">Common Lisp HyperSpec</a></li>
+<li><a href="http://www.gigamonkeys.com/book/">Practical Common Lisp</a></li>
+<li><a href="https://github.com/google/lisp-koans">Lisp Koans</a></li>
+<li><a href="https://lispwebtales.gitlab.io/repl/">Lisp REPL</a></li>
+</ul>
+
+	
+
+</body></html>

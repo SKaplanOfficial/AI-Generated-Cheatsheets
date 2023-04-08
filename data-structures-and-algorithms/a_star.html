@@ -1,0 +1,305 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h1 id="a-algorithm-implementation-cheatsheet">A* Algorithm Implementation Cheatsheet</h1>
+<h2 id="overview">Overview</h2>
+<p>A* algorithm is an informed search algorithm that finds the shortest path between two given nodes on a graph. It uses a heuristic function to estimate the cost of reaching the goal from the current node. A* algorithm is guaranteed to find the shortest path if the heuristic is admissible and consistent.</p>
+<h2 id="implementation">Implementation</h2>
+<ol>
+<li>Define the heuristic function that estimates the cost of reaching the goal from the current node.</li>
+<li>Define the data structures to be used: <code>open_list</code>, <code>closed_list</code>, <code>g_score</code>, <code>h_score</code>, and <code>f_score</code>.</li>
+<li>Add the starting node to the <code>open_list</code> with an initial <code>g_score</code> of 0 and <code>h_score</code> calculated using the heuristic function.</li>
+<li>While the <code>open_list</code> is not empty, select the node with the lowest <code>f_score</code> and remove it from <code>open_list</code>.</li>
+<li>If the selected node is the goal, return the path.</li>
+<li>Add the selected node to the <code>closed_list</code>.</li>
+<li>For each neighboring node of the selected node, calculate its tentative <code>g_score</code> and <code>h_score</code> using the heuristic function.</li>
+<li>If the neighboring node is already in the <code>closed_list</code>, skip it.</li>
+<li>If the neighboring node is not in the <code>open_list</code>, add it to the <code>open_list</code>.</li>
+<li>If the neighboring node is already in the <code>open_list</code> and the tentative <code>g_score</code> is greater than or equal to its current <code>g_score</code>, skip it. Otherwise, update the <code>g_score</code>, <code>h_score</code>, and <code>f_score</code> of the neighboring node and add it to the <code>open_list</code>.</li>
+<li>Repeat steps 4-10 until the <code>open_list</code> is empty.</li>
+</ol>
+<h2 id="python-example">Python Example</h2>
+<pre><code class="hljs python"><span class="hljs-keyword">import</span> heapq
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">heuristic</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">abs</span>(b[<span class="hljs-number">0</span>] - a[<span class="hljs-number">0</span>]) + <span class="hljs-built_in">abs</span>(b[<span class="hljs-number">1</span>] - a[<span class="hljs-number">1</span>])
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">astar</span>(<span class="hljs-params">array, start, goal</span>):
+    neighbors = [(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>),(<span class="hljs-number">0</span>,-<span class="hljs-number">1</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>),(-<span class="hljs-number">1</span>,<span class="hljs-number">0</span>),(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),(<span class="hljs-number">1</span>,-<span class="hljs-number">1</span>),(-<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),(-<span class="hljs-number">1</span>,-<span class="hljs-number">1</span>)]
+
+    close_set = <span class="hljs-built_in">set</span>()
+    came_from = {}
+    gscore = {start:<span class="hljs-number">0</span>}
+    fscore = {start:heuristic(start, goal)}
+    oheap = []
+
+    heapq.heappush(oheap, (fscore[start], start))
+    
+    <span class="hljs-keyword">while</span> oheap:
+        current = heapq.heappop(oheap)[<span class="hljs-number">1</span>]
+        <span class="hljs-keyword">if</span> current == goal:
+            data = []
+            <span class="hljs-keyword">while</span> current <span class="hljs-keyword">in</span> came_from:
+                data.append(current)
+                current = came_from[current]
+            <span class="hljs-keyword">return</span> data
+        close_set.add(current)
+        <span class="hljs-keyword">for</span> i, j <span class="hljs-keyword">in</span> neighbors:
+            neighbor = current[<span class="hljs-number">0</span>] + i, current[<span class="hljs-number">1</span>] + j
+            tentative_g_score = gscore[current] + heuristic(current, neighbor)
+            <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= neighbor[<span class="hljs-number">0</span>] &lt; array.shape[<span class="hljs-number">0</span>]:
+                <span class="hljs-keyword">if</span> <span class="hljs-number">0</span> &lt;= neighbor[<span class="hljs-number">1</span>] &lt; array.shape[<span class="hljs-number">1</span>]:                
+                    <span class="hljs-keyword">if</span> array[neighbor[<span class="hljs-number">0</span>]][neighbor[<span class="hljs-number">1</span>]] == <span class="hljs-number">1</span>:
+                        <span class="hljs-keyword">continue</span>
+                <span class="hljs-keyword">else</span>:
+                    <span class="hljs-keyword">continue</span>
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-keyword">continue</span>
+ 
+            <span class="hljs-keyword">if</span> neighbor <span class="hljs-keyword">in</span> close_set <span class="hljs-keyword">and</span> tentative_g_score &gt;= gscore.get(neighbor, <span class="hljs-number">0</span>):
+                <span class="hljs-keyword">continue</span>
+ 
+            <span class="hljs-keyword">if</span>  tentative_g_score &lt; gscore.get(neighbor, <span class="hljs-number">0</span>) <span class="hljs-keyword">or</span> neighbor <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> [i[<span class="hljs-number">1</span>]<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> oheap]:
+                came_from[neighbor] = current
+                gscore[neighbor] = tentative_g_score
+                fscore[neighbor] = tentative_g_score + heuristic(neighbor, goal)
+                heapq.heappush(oheap, (fscore[neighbor], neighbor))
+                
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">None</span>
+</code></pre>
+<h2 id="c-example">C++ Example</h2>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;queue&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;functional&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;utility&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cmath&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;unordered_map&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;set&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; pii;
+
+<span class="hljs-type">const</span> <span class="hljs-type">int</span> INF = <span class="hljs-number">1e9</span>;
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">heuristic</span><span class="hljs-params">(pii a, pii b)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">abs</span>(b.first - a.first) + <span class="hljs-built_in">abs</span>(b.second - a.second);
+}
+
+<span class="hljs-function">vector&lt;pii&gt; <span class="hljs-title">astar</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; grid, pii start, pii goal)</span> </span>{
+    <span class="hljs-type">int</span> n = grid.<span class="hljs-built_in">size</span>(), m = grid[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>();
+    vector&lt;pii&gt; dirs = {{<span class="hljs-number">0</span>,<span class="hljs-number">1</span>}, {<span class="hljs-number">0</span>,<span class="hljs-number">-1</span>}, {<span class="hljs-number">1</span>,<span class="hljs-number">0</span>}, {<span class="hljs-number">-1</span>,<span class="hljs-number">0</span>}, {<span class="hljs-number">1</span>,<span class="hljs-number">1</span>}, {<span class="hljs-number">1</span>,<span class="hljs-number">-1</span>}, {<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>}, {<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span>}};
+    priority_queue&lt;pii, vector&lt;pii&gt;, greater&lt;pii&gt;&gt; pq;
+    unordered_map&lt;<span class="hljs-type">int</span>, unordered_map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt;&gt; gscore;
+    unordered_map&lt;<span class="hljs-type">int</span>, unordered_map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt;&gt; fscore;
+    unordered_map&lt;<span class="hljs-type">int</span>, unordered_map&lt;<span class="hljs-type">int</span>, pii&gt;&gt; came_from;
+    set&lt;pii&gt; closed_set;
+
+    gscore[start.first][start.second] = <span class="hljs-number">0</span>;
+    fscore[start.first][start.second] = <span class="hljs-built_in">heuristic</span>(start, goal);
+    pq.<span class="hljs-built_in">push</span>({fscore[start.first][start.second], (start.first &lt;&lt; <span class="hljs-number">16</span>) | start.second});
+
+    <span class="hljs-keyword">while</span> (!pq.<span class="hljs-built_in">empty</span>()) {
+        <span class="hljs-keyword">auto</span> curr = pq.<span class="hljs-built_in">top</span>(); pq.<span class="hljs-built_in">pop</span>();
+        <span class="hljs-type">int</span> x = curr.second &gt;&gt; <span class="hljs-number">16</span>, y = curr.second &amp; <span class="hljs-number">0xFFFF</span>;
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">make_pair</span>(x, y) == goal) {
+            vector&lt;pii&gt; path;
+            <span class="hljs-keyword">while</span> (x != start.first || y != start.second) {
+                path.<span class="hljs-built_in">push_back</span>({x, y});
+                <span class="hljs-type">int</span> tmp_x = x, tmp_y = y;
+                x = came_from[tmp_x][tmp_y].first;
+                y = came_from[tmp_x][tmp_y].second;
+            }
+            path.<span class="hljs-built_in">push_back</span>({x, y});
+            <span class="hljs-built_in">reverse</span>(path.<span class="hljs-built_in">begin</span>(), path.<span class="hljs-built_in">end</span>());
+            <span class="hljs-keyword">return</span> path;
+        }
+        closed_set.<span class="hljs-built_in">insert</span>({x, y});
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> dir : dirs) {
+            <span class="hljs-type">int</span> nx = x + dir.first, ny = y + dir.second;
+            <span class="hljs-keyword">if</span> (nx &lt; <span class="hljs-number">0</span> || nx &gt;= n || ny &lt; <span class="hljs-number">0</span> || ny &gt;= m || grid[nx][ny] == <span class="hljs-number">1</span>) <span class="hljs-keyword">continue</span>;
+            <span class="hljs-keyword">if</span> (closed_set.<span class="hljs-built_in">count</span>({nx, ny})) <span class="hljs-keyword">continue</span>;
+            <span class="hljs-type">int</span> tentative_gscore = gscore[x][y] + <span class="hljs-built_in">heuristic</span>({x, y}, {nx, ny});
+            <span class="hljs-keyword">if</span> (!gscore.<span class="hljs-built_in">count</span>(nx) || !gscore[nx].<span class="hljs-built_in">count</span>(ny) || tentative_gscore &lt; gscore[nx][ny]) {
+                came_from[nx][ny] = {x, y};
+                gscore[nx][ny] = tentative_gscore;
+                fscore[nx][ny] = tentative_gscore + <span class="hljs-built_in">heuristic</span>({nx, ny}, goal);
+                pq.<span class="hljs-built_in">push</span>({fscore[nx][ny], (nx &lt;&lt; <span class="hljs-number">16</span>) | ny});
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> {};
+}
+
+<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; grid = {
+        {<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>},
+        {<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>},
+        {<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>},
+        {<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>},
+        {<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>}
+    };
+    pii start = {<span class="hljs-number">0</span>, <span class="hljs-number">0</span>}, goal = {<span class="hljs-number">4</span>, <span class="hljs-number">4</span>};
+    <span class="hljs-keyword">auto</span> path = <span class="hljs-built_in">astar</span>(grid, start, goal);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> p : path) {
+        cout &lt;&lt; <span class="hljs-string">"("</span> &lt;&lt; p.first &lt;&lt; <span class="hljs-string">", "</span> &lt;&lt; p.second &lt;&lt; <span class="hljs-string">") "</span>;
+    }
+    cout &lt;&lt; endl;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A* Search Algorithm</a>: Wikipedia page on A* algorithm</li>
+<li><a href="https://www.redblobgames.com/pathfinding/a-star/introduction.html">Introduction to A* Pathfinding</a>: Red Blob Games tutorial on A* algorithm</li>
+<li><a href="https://www.geeksforgeeks.org/a-search-algorithm/">A* Search Algorithm</a>: GeeksforGeeks tutorial on A* algorithm</li>
+<li><a href="https://theory.stanford.edu/~amitp/GameProgramming/">Pathfinding with A*</a>: Amit’s A* Pages with detailed explanations and interactive examples</li>
+<li><a href="http://www.ai-junkie.com/astar/astar1.html">A* Pathfinding for Beginners</a>: AI Junkie tutorial on A* algorithm with code samples</li>
+<li><a href="https://qiao.github.io/PathFinding.js/visual/">A* Pathfinding Visualization Tool</a>: Pathfinding.js Visualizer for A* algorithm</li>
+<li><a href="https://www.youtube.com/watch?v=-L-WgKMFuhE">A* Pathfinding for Beginners - Introduction to Pathfinding</a>: YouTube video tutorial on A* algorithm by Sebastian Lague</li>
+</ul>
+
+	
+
+</body></html>

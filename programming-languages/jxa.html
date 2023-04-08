@@ -1,0 +1,225 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8"><style>* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	line-height: 1.6;
+	font-size: 0.6875em; /* 11 pt */
+	color: #111;
+	margin: 0;
+}
+
+body > :first-child {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+body > :last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0.5em 0 0.25em;
+}
+
+h5,
+h6 {
+	padding: 0;
+}
+
+h5 {
+	font-size: 1em;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0.25em 0 1em;
+}
+
+blockquote {
+	margin: 0.5em 0 1em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	border-left: 4px solid gainsboro;
+	font-style: italic;
+}
+
+ul,
+ol {
+	margin: 0;
+	margin-left: 1em;
+	padding: 0 1.5em 0.5em;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code,
+p code,
+li code,
+pre code {
+	background-color: #f8f8f8;
+	padding: 0.1em 0.375em;
+	border: 1px solid #f8f8f8;
+	border-radius: 0.25em;
+	font-family: monospace;
+	font-size: 1.2em;
+}
+
+pre code {
+	display: block;
+	padding: 0.5em;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+img {
+	max-width: 100%;
+	margin: 1em 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	display: block;
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: auto;
+}
+
+table th,
+table td {
+	padding: 0.5em 1em;
+	border: 1px solid gainsboro;
+}
+
+table th {
+	font-weight: 600;
+}
+
+table tr {
+	background-color: white;
+	border-top: 1px solid gainsboro;
+}
+
+table tr:nth-child(2n) {
+	background-color: whitesmoke;
+}
+/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/markdown.css*/</style><style>pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: GitHub
+  Description: Light theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-light
+  Current colors taken from GitHub's CSS
+*/.hljs{color:#24292e;background:#fff}.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-variable.language_{color:#d73a49}.hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_{color:#6f42c1}.hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-variable{color:#005cc5}.hljs-meta .hljs-string,.hljs-regexp,.hljs-string{color:#032f62}.hljs-built_in,.hljs-symbol{color:#e36209}.hljs-code,.hljs-comment,.hljs-formula{color:#6a737d}.hljs-name,.hljs-quote,.hljs-selector-pseudo,.hljs-selector-tag{color:#22863a}.hljs-subst{color:#24292e}.hljs-section{color:#005cc5;font-weight:700}.hljs-bullet{color:#735c0f}.hljs-emphasis{color:#24292e;font-style:italic}.hljs-strong{color:#24292e;font-weight:700}.hljs-addition{color:#22863a;background-color:#f0fff4}.hljs-deletion{color:#b31d28;background-color:#ffeef0}/*# sourceURL=/Users/steven/.nvm/versions/node/v18.15.0/lib/node_modules/md-to-pdf/node_modules/highlight.js/styles/github.css*/</style></head>
+	<body class="">
+		<h2 id="jxa-cheatsheet-for-macos-application-scripting-and-automation">JXA Cheatsheet for macOS Application Scripting and Automation</h2>
+<p>JXA (JavaScript for Automation) is a scripting language that allows you to automate tasks on your Mac using JavaScript. Here's a quick overview of its unique features and some code blocks for common macOS application scripting and automation tasks.</p>
+<h3 id="terminology">Terminology</h3>
+<ul>
+<li><strong>Application</strong>: A running instance of a macOS application.</li>
+<li><strong>Process</strong>: A running instance of an application.</li>
+<li><strong>Window</strong>: A window in an application.</li>
+<li><strong>Tab</strong>: A tab in a window.</li>
+<li><strong>Document</strong>: A document in an application.</li>
+<li><strong>UI Element</strong>: A user interface element, such as a button, text field, or menu item.</li>
+</ul>
+<h3 id="variables">Variables</h3>
+<p>Declare variables using the <code>var</code> keyword. JXA is dynamically typed and variables can hold any type of value.</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-title class_">Application</span>(<span class="hljs-string">"Safari"</span>);
+<span class="hljs-keyword">var</span> <span class="hljs-variable language_">window</span> = app.<span class="hljs-property">windows</span>[<span class="hljs-number">0</span>];
+</code></pre>
+<h3 id="functions">Functions</h3>
+<p>Functions in JXA are declared using the <code>function</code> keyword. They can take parameters and return values.</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">clickButton</span>(<span class="hljs-params">buttonName</span>) {
+ <span class="hljs-keyword">var</span> app = <span class="hljs-title class_">Application</span>.<span class="hljs-title function_">currentApplication</span>();
+ app.<span class="hljs-property">includeStandardAdditions</span> = <span class="hljs-literal">true</span>;
+ app.<span class="hljs-title function_">click</span>(app.<span class="hljs-title function_">button</span>(buttonName));
+}
+</code></pre>
+<h3 id="loops">Loops</h3>
+<p>JXA supports <code>for</code> and <code>while</code> loops for iterating over arrays or performing a task a certain number of times.</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-title class_">Application</span>(<span class="hljs-string">"Safari"</span>);
+<span class="hljs-keyword">var</span> windows = app.<span class="hljs-property">windows</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; windows.<span class="hljs-property">length</span>; i++) {
+ <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(windows[i].<span class="hljs-title function_">name</span>());
+}
+
+<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (i &lt; windows.<span class="hljs-property">length</span>) {
+ <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(windows[i].<span class="hljs-title function_">name</span>());
+ i++;
+}
+</code></pre>
+<h3 id="conditionals">Conditionals</h3>
+<p>Use <code>if</code> statements to execute code based on a condition. <code>else if</code> and <code>else</code> statements can be used to handle multiple conditions.</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> app = <span class="hljs-title class_">Application</span>(<span class="hljs-string">"Safari"</span>);
+<span class="hljs-keyword">var</span> <span class="hljs-variable language_">window</span> = app.<span class="hljs-property">windows</span>[<span class="hljs-number">0</span>];
+
+<span class="hljs-keyword">if</span> (<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">exists</span>()) {
+ <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Window exists"</span>);
+} <span class="hljs-keyword">else</span> {
+ <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"Window does not exist"</span>);
+}
+</code></pre>
+<h3 id="file-manipulation">File Manipulation</h3>
+<p>JXA provides built-in support for file manipulation, including reading and writing files, and interacting with the file system.</p>
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> file = <span class="hljs-title class_">File</span>(<span class="hljs-string">"/path/to/file.txt"</span>);
+
+<span class="hljs-comment">// Read the entire contents of the file</span>
+<span class="hljs-keyword">var</span> contents = file.<span class="hljs-title function_">read</span>();
+
+<span class="hljs-comment">// Write new contents to the file</span>
+file.<span class="hljs-title function_">write</span>(<span class="hljs-string">"New contents"</span>);
+
+<span class="hljs-comment">// Check if the file exists</span>
+<span class="hljs-keyword">if</span> (file.<span class="hljs-title function_">exists</span>()) {
+ <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">"File exists"</span>);
+}
+
+<span class="hljs-comment">// Get information about the file</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(file.<span class="hljs-title function_">creationDate</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(file.<span class="hljs-title function_">modificationDate</span>());
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(file.<span class="hljs-title function_">size</span>());
+</code></pre>
+<h3 id="resources">Resources</h3>
+<p>Here are some resources to help you learn more about JXA for macOS application scripting and automation:</p>
+<ul>
+<li><a href="https://github.com/JXA-Cookbook/JXA-Cookbook">JXA Cookbook</a></li>
+<li><a href="https://github.com/dtinth/JXA-Cookbook/wiki/Resources">JXA Resources</a></li>
+<li><a href="https://developer.apple.com/library/archive/documentation/LanguagesUtilities/Conceptual/MacAutomationScriptingGuide/index.html">macOS Automation</a> (Apple Developer Documentation)</li>
+<li><a href="https://pfiddlesoft.com/uibrowser/">UI Browser</a> (Tool for exploring the user interface of macOS applications)</li>
+</ul>
+
+	
+
+</body></html>
