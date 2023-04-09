@@ -90,7 +90,7 @@ int heuristic(pii a, pii b) {
 
 vector<pii> astar(vector<vector<int>>& grid, pii start, pii goal) {
     int n = grid.size(), m = grid[0].size();
-    vector<pii> dirs = {{0,1}, {0,-1}, {1,0}, {-1,0}, {1,1}, {1,-1}, {-1,1}, {-1,-1}};
+    vector<pii> dirs = {% raw %}{{0,1}, {0,-1}, {1,0}, {-1,0}, {1,1}, {1,-1}, {-1,1}, {-1,-1}}{% endraw %};
     priority_queue<pii, vector<pii>, greater<pii>> pq;
     unordered_map<int, unordered_map<int, int>> gscore;
     unordered_map<int, unordered_map<int, int>> fscore;
